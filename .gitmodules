@@ -1,5 +1,11 @@
-[submodule "EXTRA_JOYFUL/.config/mpv/scripts"]
-	path = EXTRA_JOYFUL/.config/mpv/scripts
-	url = https://github.com/owl4ce/material-osc.git
-	branch = material-icomoon
+[submodule "MPV"]
+	path = .local/config/mpv
+	url = https://github.com/zydezu/mpvconfig
+	branch = main
+	shallow = true
+
+[submodule "OhMyZsh"]
+	path = .local/config/ohmyzsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
+	branch = master
 	shallow = true
