@@ -7,3 +7,4 @@
 	path = .local/config/ohmyzsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
 	branch = master
+	shallow = true
