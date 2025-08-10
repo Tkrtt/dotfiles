@@ -1,0 +1,462 @@
+@keyframes ripple_effect {
+  to {
+    background-size: 1000% 1000%;
+  }
+}
+
+@keyframes scale_ripple_effect {
+  to {
+    background-size: auto, 1000% 1000%;
+  }
+}
+
+@keyframes header_ripple_effect {
+  from {
+    background-image: radial-gradient(circle farthest-corner at center, #63C5EA 0%, transparent 0%);
+  }
+  to {
+    background-image: radial-gradient(circle farthest-corner at center, #63C5EA 100%, transparent 0%);
+  }
+}
+
+* {
+  background-clip: padding-box;
+  -GtkToolButton-icon-spacing: 0;
+  -GtkTextView-error-underline-color: #ff8c3e;
+  -GtkScrolledWindow-scrollbar-spacing: 0;
+  -GtkToolItemGroup-expander-size: 11;
+  -GtkWidget-text-handle-width: 24;
+  -GtkWidget-text-handle-height: 24;
+  -GtkDialog-button-spacing: 4;
+  -GtkDialog-action-area-border: 0;
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: transparent;
+  outline-offset: -4px;
+  -gtk-outline-radius: 6px;
+  -gtk-secondary-caret-color: #63C5EA;
+}
+
+notebook:focus tab,
+*:focus {
+  outline-color: alpha(currentColor, 0.24);
+}
+
+/***************
+ * Base States *
+ ***************/
+.background {
+  background-color: #373E4D;
+  color: #F9F9F9;
+}
+
+/*
+   These wildcard seems unavoidable, need to investigate.
+   Wildcards are bad and troublesome, use them with care,
+   or better, just don't.
+   Everytime a wildcard is used a kitten dies, painfully.
+*/
+*:disabled {
+  -gtk-icon-effect: dim;
+}
+
+.gtkstyle-fallback {
+  background-color: #373E4D;
+  color: #F9F9F9;
+}
+
+.gtkstyle-fallback:hover {
+  background-color: #28323e;
+  color: #F9F9F9;
+}
+
+.gtkstyle-fallback:active {
+  background-color: #1e262f;
+  color: #F9F9F9;
+}
+
+.gtkstyle-fallback:disabled {
+  background-color: #373E4D;
+  color: rgba(248, 248, 242, 0.5);
+}
+
+.gtkstyle-fallback:selected {
+  background-color: #63C5EA;
+  color: white;
+}
+
+.view {
+  background-color: #373E4D;
+  color: #F9F9F9;
+}
+
+.view:hover {
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+}
+
+.view:selected:hover {
+  box-shadow: inset 0 0 0 9999px rgba(189, 153, 255, 0.08);
+}
+
+.view:disabled {
+  color: rgba(248, 248, 242, 0.5);
+}
+
+.view:hover, .view:selected {
+  border-radius: 6px;
+}
+
+textview text {
+  background-color: #373E4D;
+}
+
+textview border {
+  background-color: #373E4D;
+  color: rgba(248, 248, 242, 0.7);
+}
+
+.rubberband,
+rubberband,
+flowbox rubberband,
+treeview.view rubberband,
+.content-view rubberband,
+.content-view .rubberband,
+XfdesktopIconView.view .rubberband {
+  border: 1px solid #ddb9ff;
+  background-color: rgba(221, 185, 255, 0.3);
+}
+
+flowbox flowboxchild {
+  padding: 4px;
+  border-radius: 6px;
+}
+
+.content-view .tile:selected {
+  background-color: transparent;
+  color: inherit;
+}
+
+label {
+  caret-color: currentColor;
+}
+
+label.separator {
+  color: #F9F9F9;
+}
+
+label:disabled {
+  color: rgba(248, 248, 242, 0.5);
+}
+
+headerbar label:disabled,
+tab label:disabled,
+button label:disabled {
+  color: inherit;
+}
+
+.dim-label, label.separator, .titlebar:not(headerbar) .subtitle,
+headerbar .subtitle, .budgie-notification .notification-body, .budgie-switcher .notification-body {
+  opacity: 0.6;
+}
+
+assistant .sidebar {
+  padding: 4px 0;
+}
+
+assistant .sidebar label {
+  min-height: 32px;
+  padding: 0 12px;
+  color: rgba(248, 248, 242, 0.5);
+  font-weight: 500;
+}
+
+assistant .sidebar label.highlight {
+  color: #F9F9F9;
+}
+
+/*********************
+ * Spinner Animation *
+ *********************/
+@keyframes spin {
+  to {
+    -gtk-icon-transform: rotate(1turn);
+  }
+}
+
+spinner {
+  background: none;
+  opacity: 0;
+  -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
+}
+
+spinner:checked {
+  opacity: 1;
+  animation: spin 1s linear infinite;
+}
+
+spinner:checked:disabled {
+  opacity: 0.5;
+}
+
+/****************
+ * Text Entries *
+ ****************/
+spinbutton:not(.vertical),
+entry {
+  min-height: 32px;
+  padding: 0 8px;
+  border-radius: 6px 6px 0 0;
+  transition: all 100ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1);
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #63C5EA 0%, transparent 0%) 0 0 0/0 0 0px;
+  box-shadow: inset 0 -1px rgba(248, 248, 242, 0.3);
+  background-color: rgba(248, 248, 242, 0.04);
+  color: #F9F9F9;
+}
+
+spinbutton:focus:not(.vertical),
+entry:focus {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #63C5EA 100%, transparent 0%) 0 0 2/0 0 2px;
+  box-shadow: inset 0 -1px rgba(248, 248, 242, 0.3);
+}
+
+spinbutton:disabled:not(.vertical),
+entry:disabled {
+  box-shadow: inset 0 -1px rgba(248, 248, 242, 0.12);
+  background-color: rgba(248, 248, 242, 0.04);
+  color: rgba(248, 248, 242, 0.5);
+}
+
+spinbutton.flat:not(.vertical), entry.preferences-search, layoutpane entry.search, editortweak entry.search,
+entry.flat {
+  min-height: 0;
+  padding: 2px;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+spinbutton:not(.vertical) image,
+entry image {
+  color: rgba(248, 248, 242, 0.7);
+}
+
+spinbutton:not(.vertical) image:hover, spinbutton:not(.vertical) image:active,
+entry image:hover,
+entry image:active {
+  color: #F9F9F9;
+}
+
+spinbutton:not(.vertical) image:disabled,
+entry image:disabled {
+  color: rgba(248, 248, 242, 0.5);
+}
+
+spinbutton:not(.vertical) image.left,
+entry image.left {
+  margin-left: 0px;
+  margin-right: 6px;
+}
+
+spinbutton:not(.vertical) image.right,
+entry image.right {
+  margin-left: 6px;
+  margin-right: 0px;
+}
+
+spinbutton:not(.vertical) undershoot.left,
+entry undershoot.left {
+  background-color: transparent;
+  background-image: linear-gradient(to top, rgba(50, 63, 78, 0.3) 50%, rgba(248, 248, 242, 0.3) 50%);
+  padding-left: 1px;
+  background-size: 1px 12px;
+  background-repeat: repeat-y;
+  background-origin: content-box;
+  background-position: left top;
+}
+
+spinbutton:not(.vertical) undershoot.right,
+entry undershoot.right {
+  background-color: transparent;
+  background-image: linear-gradient(to top, rgba(50, 63, 78, 0.3) 50%, rgba(248, 248, 242, 0.3) 50%);
+  padding-right: 1px;
+  background-size: 1px 12px;
+  background-repeat: repeat-y;
+  background-origin: content-box;
+  background-position: right top;
+}
+
+spinbutton.error:not(.vertical),
+entry.error {
+  transition: all 100ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1);
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #ff8c3e 0%, transparent 0%) 0 0 0/0 0 0px;
+  box-shadow: inset 0 -1px #ff8c3e;
+  background-color: rgba(248, 248, 242, 0.04);
+  color: #F9F9F9;
+}
+
+spinbutton.error:focus:not(.vertical),
+entry.error:focus {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #ff8c3e 100%, transparent 0%) 0 0 2/0 0 2px;
+  box-shadow: inset 0 -1px #ff8c3e;
+}
+
+spinbutton.error:disabled:not(.vertical),
+entry.error:disabled {
+  box-shadow: inset 0 -1px rgba(248, 248, 242, 0.12);
+  background-color: rgba(248, 248, 242, 0.04);
+  color: rgba(248, 248, 242, 0.5);
+}
+
+spinbutton.warning:not(.vertical),
+entry.warning {
+  transition: all 100ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1);
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #ee9c11 0%, transparent 0%) 0 0 0/0 0 0px;
+  box-shadow: inset 0 -1px #ee9c11;
+  background-color: rgba(248, 248, 242, 0.04);
+  color: #F9F9F9;
+}
+
+spinbutton.warning:focus:not(.vertical),
+entry.warning:focus {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #ee9c11 100%, transparent 0%) 0 0 2/0 0 2px;
+  box-shadow: inset 0 -1px #ee9c11;
+}
+
+spinbutton.warning:disabled:not(.vertical),
+entry.warning:disabled {
+  box-shadow: inset 0 -1px rgba(248, 248, 242, 0.12);
+  background-color: rgba(248, 248, 242, 0.04);
+  color: rgba(248, 248, 242, 0.5);
+}
+
+spinbutton:not(.vertical) progress,
+entry progress {
+  margin: 2px -6px;
+  border-bottom: 2px solid #63C5EA;
+  background-color: transparent;
+}
+
+spinbutton.vertical entry, .gedit-search-slider .linked:not(.vertical) > entry {
+  border-radius: 6px;
+  transition: all 100ms cubic-bezier(0, 0, 0.2, 1);
+  border-image: none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: #373E4D;
+  color: #F9F9F9;
+}
+
+spinbutton.vertical entry:focus, .gedit-search-slider .linked:not(.vertical) > entry:focus {
+  border-image: none;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.23);
+}
+
+spinbutton.vertical entry:disabled, .gedit-search-slider .linked:not(.vertical) > entry:disabled {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: #373E4D;
+  color: rgba(248, 248, 242, 0.5);
+}
+
+spinbutton.vertical entry.error, .gedit-search-slider .linked:not(.vertical) > entry.error {
+  transition: all 100ms cubic-bezier(0, 0, 0.2, 1);
+  border-image: none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: #ff8c3e;
+  color: white;
+}
+
+spinbutton.vertical entry.error:focus, .gedit-search-slider .linked:not(.vertical) > entry.error:focus {
+  border-image: none;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.23);
+}
+
+spinbutton.vertical entry.error:disabled, .gedit-search-slider .linked:not(.vertical) > entry.error:disabled {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: #373E4D;
+  color: rgba(248, 248, 242, 0.5);
+}
+
+spinbutton.vertical entry.error image, .gedit-search-slider .linked:not(.vertical) > entry.error image {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+spinbutton.vertical entry.error image:hover, .gedit-search-slider .linked:not(.vertical) > entry.error image:hover, spinbutton.vertical entry.error image:active, .gedit-search-slider .linked:not(.vertical) > entry.error image:active {
+  color: white;
+}
+
+spinbutton.vertical entry.error image:disabled, .gedit-search-slider .linked:not(.vertical) > entry.error image:disabled {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+spinbutton.vertical entry.warning, .gedit-search-slider .linked:not(.vertical) > entry.warning {
+  transition: all 100ms cubic-bezier(0, 0, 0.2, 1);
+  border-image: none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: #ee9c11;
+  color: white;
+}
+
+spinbutton.vertical entry.warning:focus, .gedit-search-slider .linked:not(.vertical) > entry.warning:focus {
+  border-image: none;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.23);
+}
+
+spinbutton.vertical entry.warning:disabled, .gedit-search-slider .linked:not(.vertical) > entry.warning:disabled {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: #373E4D;
+  color: rgba(248, 248, 242, 0.5);
+}
+
+spinbutton.vertical entry.warning image, .gedit-search-slider .linked:not(.vertical) > entry.warning image {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+spinbutton.vertical entry.warning image:hover, .gedit-search-slider .linked:not(.vertical) > entry.warning image:hover, spinbutton.vertical entry.warning image:active, .gedit-search-slider .linked:not(.vertical) > entry.warning image:active {
+  color: white;
+}
+
+spinbutton.vertical entry.warning image:disabled, .gedit-search-slider .linked:not(.vertical) > entry.warning image:disabled {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+treeview entry.flat, treeview entry {
+  background-color: #373E4D;
+}
+
+treeview entry.flat, treeview entry.flat:focus, treeview entry, treeview entry:focus {
+  border-image: none;
+  box-shadow: none;
+}
+
+.entry-tag, .documents-entry-tag, .photos-entry-tag {
+  margin: 2px;
+  border-radius: 9999px;
+  box-shadow: none;
+  background-color: rgba(248, 248, 242, 0.12);
+  color: #F9F9F9;
+}
+
+.entry-tag:hover, .documents-entry-tag:hover, .photos-entry-tag:hover {
+  background-image: image(rgba(248, 248, 242, 0.12));
+}
+
+:dir(ltr) .entry-tag, :dir(ltr) .documents-entry-tag, :dir(ltr) .photos-entry-tag {
+  margin-left: 4px;
+  margin-right: 0;
+  padding-left: 12px;
+  padding-right: 8px;
+}
+
+:dir(rtl) .entry-tag, :dir(rtl) .documents-entry-tag, :dir(rtl) .photos-entry-tag {
+  margin-left: 0;
+  margin-right: 4px;
+  padding-left: 8px;
+  padding-right: 12px;
+}
+
+.entry-tag.button, .button.documents-entry-tag, .button.photos-entry-tag {
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.entry-tag.button:not(:hover):not(:active), .button.documents-entry-tag:not(:hover):not(:active), .button.photos-entry-tag:not(:hover):not(:active) {
+  color: rgba(248, 248, 242, 0.7);
+}

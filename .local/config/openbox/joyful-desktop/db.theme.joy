@@ -1,0 +1,15 @@
+ob_button_style.mechanical.artistic          "Dots2"
+ob_button_location.mechanical.artistic       "right"
+wallpaper.mechanical.artistic                "bata.png"
+
+ob_button_style.mechanical.interactive       "Dots"
+ob_button_location.mechanical.interactive    "right"
+wallpaper.mechanical.interactive             "bata.png"
+
+ob_button_style.eyecandy.artistic            "Backslash"
+ob_button_location.eyecandy.artistic         "right"
+wallpaper.eyecandy.artistic                  "snow_FHD.jpg"
+
+ob_button_style.eyecandy.interactive         "Dots"
+ob_button_location.eyecandy.interactive      "right"
+wallpaper.eyecandy.interactive               "107306248_p0e.png"
