@@ -1,6 +1,0 @@
-[submodule "etc.append/.local/config/mpv"]
-	path = etc.append/.local/config/mpv
-	url = https://github.com/zydezu/mpvconfig
-[submodule "etc.append/.local/config/ohmyzsh"]
-	path = etc.append/.local/config/ohmyzsh
-	url = https://github.com/ohmyzsh/ohmyzsh.git
