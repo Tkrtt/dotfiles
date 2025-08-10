@@ -1,0 +1,6 @@
+type            = process
+command         = /usr/bin/slim
+smooth-recovery = true
+logfile         = /var/log/dinit/slim.log
+depends-on      = logind
+depends-on      = login.target
