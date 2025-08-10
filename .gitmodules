@@ -1,0 +1,9 @@
+[submodule ".local/config/mpv"]
+	path = .local/config/mpv
+	url = https://github.com/zydezu/mpvconfig
+	branch = main
+    shallow = true
+[submodule ".local/config/ohmyzsh"]
+	path = .local/config/ohmyzsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
+	branch = master
