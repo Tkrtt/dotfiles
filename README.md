@@ -4,7 +4,7 @@
 <div align="center">
 
 ```ocaml
-DEPRECIATED / MIGRATING TO LABWC
+X11 DEPRECIATED / CURRENTLY MIGRATING TO LABWC
 ```
 
 </div>
@@ -13,25 +13,9 @@ DEPRECIATED / MIGRATING TO LABWC
 <a href="#seedling--setup">SETUP</a> • <a href="#four_leaf_clover--key-bindings">KEYBINDS</a> • <a href="https://deviantart.com/owl4ce/art/Sakura-Saber-872360153">GALLERY</a> • <a href="#herb--guides">GUIDES</a>
 </pre>
 
-<h1>
-  <a href="#--------">
-    <img alt="" align="right" src="https://badges.pufler.dev/visits/owl4ce/dotfiles?style=flat-square&label=&color=000000&logo=github&logoColor=white&labelColor=000000"/>
-  </a>
-</h1>
+You might be here looking for (Linux) rice reference or to (fully?) replicate owl4ce's configuration of OpenboxWM and several apps as well. :snowman:
 
-### :octocat: ‎ <sup><sub><samp>HI THERE! THANKS FOR DROPPING BY!</samp></sub></sup>
-
-<a href="#octocat--hi-there-thanks-for-dropping-by">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" alt="" align="right" width="400px" srcset="https://i.imgur.com/7pWg4vR.jpg"/>
-    <img alt="" align="right" width="400px" src="https://i.imgur.com/VMiaVX3.jpg"/>
-  </picture>
-</a>
-
-You might be here looking for (Linux) rice reference or to (fully?) replicate my personal
-configuration of my favorite Openbox Window Manager and several apps as well. :snowman:
-
-Most were written from scratch. Some details:
+Most were written from scratch by them. Some details:
 
 - **Window Manager** :bento: [Openbox](http://openbox.org/wiki/Main_Page) dual themes!
 - **Openbox Menu** :cyclone: [obmenu-generator](https://github.com/trizen/obmenu-generator) for life!
@@ -83,7 +67,7 @@ CLICK OR TAP ❲☰❳ TO SHOW TABLE-OF-CONTENTS
   </tr>
   <tr>
     <td align="center">
-      <a href="https://wiki.gentoo.org/wiki/Benefits_of_Gentoo">
+      <a href="https://wiki.">
         <sup><sub><samp>Artix Linux x86_64</samp></sub></sup>
       </a>
     </td>
@@ -192,8 +176,6 @@ CLICK OR TAP ❲☰❳ TO SHOW TABLE-OF-CONTENTS
 </details>
 
 ## :seedling: ‎ <samp>SETUP</samp>
-
-Everything done manually step-by-step. Let's learn. [中文教程](https://www.maredevi.fun/2022/09/29/)
 
 ### :blossom: ‎ <samp>INSTALLATION (<a href="./REPOLOGY.md">DEPENDENCIES</a>)</samp>
 
@@ -338,177 +320,6 @@ I personally use NetworkManager (and IWD as wireless back-end) with nm-applet,
 
 </details>
 
-<details>
-<summary><b>1. Gentoo source-based Linux distributions</b></summary>
-
-[Gentoo Linux](https://gentoo.org) extremely recommended. Expert!
-
-**Didn't know how to install packages?**
-
-```sh
-💲 doas emerge -av atom1 atom2 ... atomN
-```
-
-> Note that some packages require accepting [arch~ keywords](https://wiki.gentoo.org/wiki/ACCEPT_KEYWORDS).
-> It's highly recommended.
-
-> See also USE flags, it's complicated to explain.
-> [You may want to see mine](https://github.com/owl4ce/hmg/tree/main/etc/portage).
-
----
-
-**X.Org server and it's utilities. This is essentials.**
-
-```sh
-x11-base/xorg-server x11-apps/xrandr
-```
-
-Contents of [1](https://packages.gentoo.org/packages/x11-base/xorg-server),
-[2](https://packages.gentoo.org/packages/x11-apps/xrandr).
-
----
-
-**Now, the UI kits and functionality. This is required.**
-
-URxvt is highly recommended terminal emulator by default. Picom is optional, but recommended.
-
-> My own [Lilium portage overlay](https://github.com/owl4ce/lilium) contains enhancements.  
-> `x11-terms/rxvt-unicode::lilium`
-
-> For pixel-perfect, subtract 1px in [`~/.Xresources`](./.Xresources#L9) and [`~/.joyfuld`](./.joyfuld#L161-L162).
-
-```sh
-x11-misc/dunst x11-misc/nitrogen x11-wm/openbox x11-misc/rofi x11-terms/rxvt-unicode::lilium x11-misc/tint2 \=x11-misc/picom-9999 x11-misc/obmenu-generator dev-perl/Gtk3
-```
-
-Contents of [1](https://packages.gentoo.org/packages/x11-misc/dunst),
-[2](https://packages.gentoo.org/packages/x11-misc/nitrogen),
-[3](https://packages.gentoo.org/packages/x11-wm/openbox),
-[4](https://packages.gentoo.org/packages/x11-misc/rofi),
-[5](https://github.com/owl4ce/lilium/tree/main/x11-terms/rxvt-unicode),
-[6](https://packages.gentoo.org/packages/x11-misc/tint2),
-[7](https://packages.gentoo.org/packages/x11-misc/picom),
-[8](https://packages.gentoo.org/packages/x11-misc/obmenu-generator),
-[9](https://packages.gentoo.org/packages/dev-perl/Gtk3).
-
----
-
-**Audio-server and audio stuff.**
-
-I personally use pulseaudio, mpd and ncmpcpp are recommended as they are integrated by default.
-
-```sh
-media-sound/pulseaudio media-sound/mpd media-sound/mpc media-sound/ncmpcpp
-```
-
-Contents of [1](https://packages.gentoo.org/packages/media-sound/pulseaudio),
-[2](https://packages.gentoo.org/packages/media-sound/mpd),
-[3](https://packages.gentoo.org/packages/media-sound/mpc),
-[4](https://packages.gentoo.org/packages/media-sound/ncmpcpp).
-
-MPRIS-enabled media players are also integrated, such as [spotify](https://wiki.gentoo.org/wiki/Spotify).
-
----
-
-**Extended utilities. Required, but just as necessary.**
-
-All of the below if not installed, certain functionality will display a message when needed, some will not.
-
-> I personally don't use [GURU portage overlay](https://wiki.gentoo.org/wiki/Project:GURU)
-> and build manually instead.  
-> `app-misc/brightnessctl::guru`
-
-```sh
-app-misc/brightnessctl::guru media-gfx/imagemagick media-gfx/scrot www-client/w3m net-wireless/wireless-tools x11-misc/xclip x11-misc/xsettingsd x11-misc/xss-lock
-```
-
-Contents of [1](https://gitweb.gentoo.org/repo/proj/guru.git/tree/app-misc/brightnessctl),
-[2](https://packages.gentoo.org/packages/media-gfx/imagemagick),
-[3](https://packages.gentoo.org/packages/media-gfx/scrot),
-[4](https://packages.gentoo.org/packages/www-client/w3m),
-[5](https://packages.gentoo.org/packages/net-wireless/wireless-tools),
-[6](https://packages.gentoo.org/packages/x11-misc/xclip),
-[7](https://packages.gentoo.org/packages/x11-misc/xsettingsd),
-[8](https://packages.gentoo.org/packages/x11-misc/xss-lock).
-
-Choose your own polkit authentication-agent.
-[polkit-gnome](https://packages.gentoo.org/packages/gnome-extra/polkit-gnome)?
-
----
-
-**Additionals for completion of desktop compositions.**
-
-Just like mpd and ncmpcpp, configurations are included as [EXTRA_JOYFUL](./EXTRA_JOYFUL), some are integrated.
-
-```sh
-xfce-base/thunar xfce-extra/thunar-archive-plugin xfce-extra/thunar-volman media-video/ffmpegthumbnailer xfce-extra/tumbler
-```
-
-Contents of [1](https://packages.gentoo.org/packages/xfce-base/thunar),
-[2](https://packages.gentoo.org/packages/xfce-extra/thunar-archive-plugin),
-[3](https://packages.gentoo.org/packages/xfce-extra/thunar-volman),
-[4](https://packages.gentoo.org/packages/media-video/ffmpegthumbnailer),
-[5](https://packages.gentoo.org/packages/xfce-extra/tumbler).
-
-Gsimplecal was used to display calendar pop-ups from the tint2 panel, and pavucontrol to control pulseaudio-sinks.
-
-> I personally don't use [Miramir's portage overlay](https://github.com/miramir/miramir-layman)
-> and build manually instead.  
-> `x11-misc/gsimplecal::miramir`
-
-```sh
-dev-util/geany dev-util/geany-plugins media-gfx/gimp x11-misc/gsimplecal::miramir media-gfx/inkscape media-video/mpv x11-misc/parcellite media-sound/pavucontrol media-gfx/viewnior xfce-extra/xfce4-power-manager
-```
-
-Contents of [1](https://packages.gentoo.org/packages/dev-util/geany),
-[2](https://packages.gentoo.org/packages/dev-util/geany-plugins),
-[3](https://packages.gentoo.org/packages/media-gfx/gimp),
-[4](https://github.com/miramir/miramir-layman/tree/master/x11-misc/gsimplecal),
-[5](https://packages.gentoo.org/packages/media-gfx/inkscape),
-[6](https://packages.gentoo.org/packages/media-video/mpv),
-[7](https://packages.gentoo.org/packages/x11-misc/parcellite),
-[8](https://packages.gentoo.org/packages/media-sound/pavucontrol),
-[9](https://packages.gentoo.org/packages/media-gfx/viewnior),
-[10](https://packages.gentoo.org/packages/xfce-extra/xfce4-power-manager).
-
-I personally don't use neofetch anymore and use system-information via rofi, it's already scripted.
-
-```sh
-sys-process/htop #app-misc/neofetch
-```
-
-Contents of [1](https://packages.gentoo.org/packages/sys-process/htop),
-[2](https://packages.gentoo.org/packages/app-misc/neofetch).
-
-[Here for improved nanorc with syntax-highlighting](https://github.com/scopatz/nanorc).
-
-I personally use NetworkManager (and IWD as wireless back-end) with nm-applet,
-[here it is](https://wiki.gentoo.org/wiki/NetworkManager#GTK_GUIs).
-
-</details>
-
-<details>
-<summary><b>1. Another independent Linux distributions</b></summary>
-
-Need [contributors](#deciduous_tree--contributing) to encapsulate dependencies.
-
-<pre align="center">
-The Linux philosophy is ‘Laugh in the face of danger’.
-Oops. Wrong One. ‘Do it yourself’.
-
-- Linus Torvalds
-</pre>
-
-</details>
-
-<details>
-<summary><b>1. Berkeley Software Distribution (BSD) variants</b></summary>
-
-The [BSD variants](https://en.wikipedia.org/wiki/Comparison_of_BSD_operating_systems)
-haven't been tested at all, probably some of the extensions are [GNU](https://gnu.org)'s
-and [Linux-specific](https://refspecs.linuxfoundation.org/lsb.shtml).
-
-</details>
 
 <details>
 <summary><b>2. Z shell with oh-my-zsh plugins</b></summary>
@@ -1133,11 +944,9 @@ theme and [color scheme](./EXTRA_JOYFUL/.config/inkscape/palettes/Joyful-Desktop
 
 ## :tulip: ‎ <samp>TIP JAR</samp>
 
-If you enjoyed it and would like to show your appreciation, you may want to tip me here.
+If you enjoyed it and would like to show your appreciation, you may want to tip owl4ce here.
 
 It's never required, but always wholeheartedly appreciated.
-
-Thanks from the bottom of my heart! ‎ :heartpulse:
 
 [![](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/V7V05ZACS)
 [![](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/owl4ce/donate)
