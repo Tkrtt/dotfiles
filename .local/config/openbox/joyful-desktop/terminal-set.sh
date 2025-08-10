@@ -9,7 +9,7 @@
 # shellcheck disable=SC3044,SC2166,SC3028
 
 export LANG='POSIX'
-exec 2>/dev/null
+exec >/dev/null 2>&1
 . "${XDG_CONFIG_HOME:-$HOME/.config}/joyfuld"
 
 # https://gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html#:~:text=expand_aliases

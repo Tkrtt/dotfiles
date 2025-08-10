@@ -194,7 +194,7 @@ CONFIG_DIR="${HOME}/.local/config"
 ICONS_DIR="${HOME}/.local/share/icons"
 SCRIPTS_DIR="${CONFIG_DIR}/userscripts"
 THEMES_DIR="${HOME}/.local/share/themes"
-WALLPAPERS_DIR="${CONFIG_DIR}/wallpapers"
+WALLPAPERS_DIR="${HOME}/.local/share/wallpapers"
 URXVT_EXT_DIR="${CONFIG_DIR}/urxvt"
 TMP_DIR="/tmp"
 

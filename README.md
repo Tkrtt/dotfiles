@@ -1,19 +1,10 @@
+
 <div align="justify">
 
 <div align="center">
 
 ```ocaml
-NEVER SKIP / IGNORE / AVOID README
-```
-
-```css
-      __/)   ‌‌‌‌‬‬‬‍ ‌‌‌‌‌‬‌‌   ‌‌‌‌‌﻿‌‬ ‌‌‌‌‌﻿‌‌‌‌‌‌‌﻿‌‬        ‌‌‌‌‌﻿‌‬_      ‌‌‌‌‌‬‌‌_       ‌‌‌‌‍‬﻿﻿  ‌‌‌‌‍﻿‍﻿ 
-   .‌‌‌‌‍‬﻿‌-(_‌‌‌‌‌﻿‍‌_(=:   |   ‌‌‌‌‍‬‌﻿   ‌‌‌‌‍‬‍‍   ‌‌‌‌‌‬‌‌ | | o  | |     ‌‌‌‌‌﻿﻿‌    
-‌‌‌‌‍‬‌‍|\ |    \) ‌‌‌‌‍‬﻿‌ _‌‌‌‌‍﻿‍‌_| ‌‌‌‌‍‬‍‍  __ ‌‌‌‌‍﻿‌‬_|‌‌‌‌‍‬﻿‬_ | |‌‌‌‌‍‬‌‍    |‌‌‌‌‍﻿‍‌ |  _ ‌‌‌‌‍‬‍‍  , ‌‌‌‌‌‬﻿‍ 
-‌‌‌‌‍﻿‌﻿\‌‌‌‌‍‬‍‍ ||       / ‌‌‌‌‌﻿‍﻿ ‌‌‌‌‍‬‍‍|  /  \_|  |/‌‌‌‌‍‬﻿‬  |  |/  |/  / \‌‌‌‌‍‌‌‌‌‌‌‌‍﻿‌‌_
- \||     ‌‌‌‌‍‬﻿‍  \_/|_/\__/ |_‌‌‌‌‌‬﻿‬/‌‌‌‌‍‬﻿‍|__/|_‌‌‌‌‍‬‍‍/|__/‌‌‌‌‌﻿﻿‬|__/ \/ 
-  \|                     |\                 
-   |  6F 77 6C 34 63 65  |/  with aesthetics
+DEPRECIATED / MIGRATING TO LABWC
 ```
 
 </div>
@@ -37,7 +28,7 @@ NEVER SKIP / IGNORE / AVOID README
   </picture>
 </a>
 
-You might be here looking for (Linux) rice reference or to (full?) replicate my personal
+You might be here looking for (Linux) rice reference or to (fully?) replicate my personal
 configuration of my favorite Openbox Window Manager and several apps as well. :snowman:
 
 Most were written from scratch. Some details:
@@ -86,14 +77,14 @@ CLICK OR TAP ❲☰❳ TO SHOW TABLE-OF-CONTENTS
   <tr>
     <td align="center">
       <a href="https://github.com/owl4ce/dotfiles/discussions/172">
-        <sup><sub><samp>PURELY CONFIGURED AT 1366x768 WITH 96 DPI</samp></sub></sup>
+        <sup><sub><samp>CONFIGURED AT 2560x1600/2560x1440 WITH 192 DPI</samp></sub></sup>
       </a>
     </td>
   </tr>
   <tr>
     <td align="center">
       <a href="https://wiki.gentoo.org/wiki/Benefits_of_Gentoo">
-        <sup><sub><samp>Powered by Gentoo/Linux x86_64</samp></sub></sup>
+        <sup><sub><samp>Artix Linux x86_64</samp></sub></sup>
       </a>
     </td>
   </tr>
@@ -200,155 +191,11 @@ CLICK OR TAP ❲☰❳ TO SHOW TABLE-OF-CONTENTS
 
 </details>
 
-<details>
-<summary><b>Removals</b></summary>
-
-- **Mostly deprecated configs and BLOBs such as images**
-
-</details>
-
-*..., and is still being improved.*
-
 ## :seedling: ‎ <samp>SETUP</samp>
 
 Everything done manually step-by-step. Let's learn. [中文教程](https://www.maredevi.fun/2022/09/29/)
 
 ### :blossom: ‎ <samp>INSTALLATION (<a href="./REPOLOGY.md">DEPENDENCIES</a>)</samp>
-
-<details>
-<summary><b>1. Debian-based Linux distributions</b></summary>
-
-[Debian SID](https://wiki.debian.org/DebianUnstable) or [Devuan (ceres?)](https://devuan.org/os/releases) recommended.
-
-**Didn't know how to install packages?**
-
-```sh
-💲 sudo apt install atom1 atom2 ... atomN
-```
-
----
-
-**X.Org server and {it's,core} utilities. This is essentials.**
-
-```sh
-xserver-xorg-core x11-xserver-utils psmisc
-```
-
-Contents of [1](https://packages.debian.org/sid/xserver-xorg-core),
-[2](https://packages.debian.org/sid/x11-xserver-utils),
-[3](https://packages.debian.org/sid/psmisc).
-
-[Here for python (3) if not already installed](https://wiki.debian.org/Python).
-
----
-
-**Now, the UI kits and functionality. This is required.**
-
-URxvt is highly recommended terminal emulator by default. Picom is optional, but recommended.
-
-```sh
-dunst nitrogen openbox rofi rxvt-unicode tint2 picom libgtk3-perl #obmenu-generator
-```
-
-Contents of [1](https://packages.debian.org/sid/dunst),
-[2](https://packages.debian.org/sid/nitrogen),
-[3](https://packages.debian.org/sid/openbox),
-[4](https://packages.debian.org/sid/rofi),
-[5](https://packages.debian.org/sid/rxvt-unicode),
-[6](https://packages.debian.org/sid/tint2),
-[7](https://packages.debian.org/sid/picom),
-[8](https://packages.debian.org/sid/libgtk3-perl).
-
-[Here to install obmenu-generator](https://software.opensuse.org/download.html?project=home%3AHead_on_a_Stick%3Aobmenu-generator&package=obmenu-generator).
-
----
-
-**Audio-server and audio stuff.**
-
-I personally use pulseaudio, mpd and ncmpcpp are recommended as they are integrated by default.
-
-```sh
-pulseaudio mpd mpc ncmpcpp
-```
-
-Contents of [1](https://packages.debian.org/sid/pulseaudio),
-[2](https://packages.debian.org/sid/mpd),
-[3](https://packages.debian.org/sid/mpc),
-[4](https://packages.debian.org/sid/ncmpcpp).
-
-MPRIS-enabled media players are also integrated, such as [spotify](https://wiki.debian.org/spotify).
-
----
-
-**Extended utilities. Required, but just as necessary.**
-
-All of the below if not installed, certain functionality will display a message when needed, some will not.
-
-```sh
-alsa-utils brightnessctl imagemagick scrot w3m-img wireless-tools xclip xsettingsd xss-lock
-```
-
-Contents of [1](https://packages.debian.org/sid/alsa-utils),
-[2](https://packages.debian.org/sid/brightnessctl),
-[3](https://packages.debian.org/sid/imagemagick),
-[4](https://packages.debian.org/sid/scrot),
-[5](https://packages.debian.org/sid/w3m-img),
-[6](https://packages.debian.org/sid/wireless-tools),
-[7](https://packages.debian.org/sid/xclip),
-[8](https://packages.debian.org/sid/xsettingsd),
-[9](https://packages.debian.org/sid/xss-lock).
-
-Choose your own polkit authentication-agent. [lxpolkit](https://packages.debian.org/sid/lxpolkit)?
-
----
-
-**Additionals for completion of desktop compositions.**
-
-Just like mpd and ncmpcpp, configurations are included as [EXTRA_JOYFUL](./EXTRA_JOYFUL), some are integrated.
-
-```sh
-thunar thunar-archive-plugin thunar-volman ffmpegthumbnailer tumbler
-```
-
-Contents of [1](https://packages.debian.org/sid/thunar),
-[2](https://packages.debian.org/sid/thunar-archive-plugin),
-[3](https://packages.debian.org/sid/thunar-volman),
-[4](https://packages.debian.org/sid/ffmpegthumbnailer),
-[5](https://packages.debian.org/sid/tumbler).
-
-Gsimplecal was used to display calendar pop-ups from the tint2 panel, and pavucontrol to control pulseaudio-sinks.
-
-```sh
-geany geany-plugins gimp gsimplecal inkscape mpv parcellite pavucontrol viewnior xfce4-power-manager
-```
-
-Contents of [1](https://packages.debian.org/sid/geany),
-[2](https://packages.debian.org/sid/geany-plugins),
-[3](https://packages.debian.org/sid/gimp),
-[4](https://packages.debian.org/sid/gsimplecal),
-[5](https://packages.debian.org/sid/inkscape),
-[6](https://packages.debian.org/sid/mpv),
-[7](https://packages.debian.org/sid/parcellite),
-[8](https://packages.debian.org/sid/pavucontrol),
-[9](https://packages.debian.org/sid/viewnior),
-[10](https://packages.debian.org/sid/xfce4-power-manager).
-
-I personally don't use neofetch anymore and use system-information via rofi, it's already scripted.
-
-```sh
-htop nano #neofetch
-```
-
-Contents of [1](https://packages.debian.org/sid/htop),
-[2](https://packages.debian.org/sid/nano),
-[3](https://packages.debian.org/sid/neofetch).
-
-[Here for improved nanorc with syntax-highlighting](https://github.com/scopatz/nanorc).
-
-I personally use NetworkManager (and IWD as wireless back-end) with nm-applet,
-[here it is](https://wiki.debian.org/NetworkManager).
-
-</details>
 
 <details>
 <summary><b>1. Arch-based Linux distributions</b></summary>
@@ -664,13 +511,9 @@ and [Linux-specific](https://refspecs.linuxfoundation.org/lsb.shtml).
 </details>
 
 <details>
-<summary><b>2. Additionally Z shell with oh-my-zsh plugins</b></summary>
+<summary><b>2. Z shell with oh-my-zsh plugins</b></summary>
 
 Ensure you have installed zsh with system package manager as per distribution.
-
-```sh
-💲 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
 
 ```sh
 💲 sudo chsh -s $(command -v zsh)
@@ -797,46 +640,8 @@ broad support. [Debian](https://packages.debian.org/search?suite=sid&arch=amd64&
 ```
 
 **Why do I need to link icons to [/usr](https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/usr.html)?**  
-It's [required by dunst program](https://github.com/owl4ce/dotfiles/commit/bdcadc5c1d869a073c5038bce4ef26d0340275a3)
+It's [required by dunst program]
 to display the notification icon sent by the program.
-
-</details>
-
-<details>
-<summary><b>3. Wallpapers</b></summary>
-
-| Wallpapers                                                                                                 | License                                                              | The path where it will be put |
-|:-----------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------|:------------------------------|
-| [batik-1_4K](https://github.com/owl4ce/dotfiles/releases/download/ng/batik-1_4K.jpg)                       | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0) | `~/.wallpapers/mechanical`    |
-| [okita-souji_FHD](https://github.com/owl4ce/dotfiles/releases/download/ng/okita-souji_FHD.jpg)             | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0) | `~/.wallpapers/mechanical`    |
-| [cherry-blossoms_FHD](https://github.com/owl4ce/dotfiles/releases/download/ng/cherry-blossoms_FHD.jpg)     | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0) | `~/.wallpapers/eyecandy`      |
-| [floral-artistic-2_FHD](https://github.com/owl4ce/dotfiles/releases/download/ng/floral-artistic-2_FHD.jpg) | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0) | `~/.wallpapers/eyecandy`      |
-
-> **DISCLAIMER!!!**  
-> I don't own the artworks (because I couldn't find the link to the originals),
-> so if you the owner of the artworks with proof and want me to remove it
-> [please let me know](./CODE_OF_CONDUCT.md#enforcement).
-> - [桜セイバー沖田総司](https://pixiv.net/en/artworks/59740059)
-> - [桜](https://pixiv.net/en/artworks/80518034)
-> - [沖田総司](https://pixiv.net/en/artworks/62996457)
-
-**Wget** all the above wallpapers and put them as instructed into the `~/.wallpapers` directory.
-
-```bash
-💲 mkdir -pv ~/.wallpapers/{mechanical,eyecandy}
-```
-
----
-
-```bash
-💲 wget --no-hsts -cNP ~/.wallpapers/mechanical/ https://github.com/owl4ce/dotfiles/releases/download/ng/{batik-1_4K,okita-souji_FHD}.jpg
-```
-
-```bash
-💲 wget --no-hsts -cNP ~/.wallpapers/eyecandy/ https://github.com/owl4ce/dotfiles/releases/download/ng/{cherry-blossoms,floral-artistic-2}_FHD.jpg
-```
-
-Old wallpapers [can be found here](https://github.com/owl4ce/depfiles/tree/3.2/.wallpaper).
 
 </details>
 

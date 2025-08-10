@@ -45,7 +45,7 @@ elif GET_WL="$(iwgetid "$IFACE_WL")" && [ -n "$GET_WL" ]; then
     fi
 else
     ICON=''
-    STAT="Invalid \"${IFACE_WL}\" and \"${IFACE_ET}\" network interfaces"
+    STAT="Invalid \"${IFACE_WL}\", \"${IFACE_USB}\" and \"${IFACE_ET}\" network interfaces"
 fi
 case "${1}" in
     icon) echo "$ICON"
